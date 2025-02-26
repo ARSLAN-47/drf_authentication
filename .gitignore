@@ -1,0 +1,73 @@
+# Byte-compiled / compiled files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environment
+venv/
+env/
+*.venv
+Pipfile
+Pipfile.lock
+
+# Django secret key and environment variables
+.env
+*.env
+
+# Database files
+*.sqlite3
+*.db
+
+# Logs
+logs/
+*.log
+*.pot
+
+# Django migrations (cache files, not actual migrations)
+**/migrations/*.pyc
+**/migrations/__pycache__/
+
+# Media & Static files
+media/
+staticfiles/
+static/
+
+# Ignore IDE/editor files
+.vscode/
+.idea/
+*.iml
+
+# Ignore compiled code and cache files
+*.pyc
+*.pyo
+*.pyd
+
+# Ignore pytest & coverage reports
+.coverage
+htmlcov/
+*.cover
+.cache
+.pytest_cache/
+nosetests.xml
+coverage.xml
+
+# Ignore Docker files
+*.pid
+celerybeat-schedule
+__pycache__/
+.dockerignore
+
+# Ignore compiled translation files
+*.mo
+
+# Ignore Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# Ignore Node.js dependencies (if using frontend in Django)
+node_modules/
+npm-debug.log
+yarn.lock
+
+
+.Dockerfile
+.dockerignore
