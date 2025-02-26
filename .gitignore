@@ -23,7 +23,10 @@ logs/
 *.log
 *.pot
 
-# Django migrations (cache files, not actual migrations)
+# Ignore Django migrations (entire folder)
+**/migrations/
+
+# Ignore cache files inside migrations (already covered by the above rule, but keeping for safety)
 **/migrations/*.pyc
 **/migrations/__pycache__/
 
@@ -68,6 +71,6 @@ node_modules/
 npm-debug.log
 yarn.lock
 
-
+# Ignore Dockerfile and .dockerignore
 .Dockerfile
 .dockerignore
