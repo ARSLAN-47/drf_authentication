@@ -23,6 +23,12 @@ logs/
 *.log
 *.pot
 
+
+./stock_login
+stock_login/
+
+/__pycache__
+__pycache__/
 # Ignore Django migrations (entire folder)
 **/migrations/
 
@@ -30,6 +36,8 @@ logs/
 **/migrations/*.pyc
 **/migrations/__pycache__/
 
+migrations/
+./migrations
 # Media & Static files
 media/
 staticfiles/

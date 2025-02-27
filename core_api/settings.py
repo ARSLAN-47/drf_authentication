@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework_simplejwt',
+    'rest_framework_simplejwt.token_blacklist',
     'corsheaders',
     'authentication',
 
@@ -84,8 +85,8 @@ DATABASES = {
     "default": {
             "ENGINE": 'django.db.backends.mysql',
             "NAME": 'auth',
-            "USER": 'db',
-            "PASSWORD": 'db',
+            "USER": 'root',
+            "PASSWORD": 'root',
             "HOST": 'localhost',
             "PORT": 3306,
         }
@@ -117,21 +118,22 @@ AUTH_PASSWORD_VALIDATORS = [
 # RestFramework Configuration
 #==================================
 REST_FRAMEWORK = {
-    'DEFAULT_AUTHENTICATION_CLASSES': (
-        'rest_framework_simplejwt.authentication.JWTAuthentication',
+    'DEFAULT_PERMISSION_CLASSES': (
+        'rest_framework.permissions.IsAuthenticated',
     ),
     'DEFAULT_AUTHENTICATION_CLASSES': (
         'rest_framework_simplejwt.authentication.JWTAuthentication',
     ),
-    
+    'EXCEPTION_HANDLER': 'common.utils.exception_handler.custom_exception_handler',
 }
+
 
 SIMPLE_JWT = {
     'AUTH_HEADER_TYPES': ('JWT',),
     "ACCESS_TOKEN_LIFETIME": timedelta(minutes=120),
     "REFRESH_TOKEN_LIFETIME": timedelta(days=1),
     "ROTATE_REFRESH_TOKENS": True,
-    "UPDATE_LAST_LOGIN": True,
+    "BLACKLIST_AFTER_ROTATION": True,
 }
 
 
